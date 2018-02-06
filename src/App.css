@@ -10,6 +10,7 @@
 }
 
 .App-header {
+  font-family: 'Avenir Next', san-serif;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -19,14 +20,18 @@
   width: 100%;
 }
 
+.App-divider {
+  width: 40%;
+  border: 1px solid white;
+}
+
 .App-title {
   font-size: 1.5em;
-  font-family: 'Avenir Next', san-serif;
   font-weight: 100;
 }
 
 .App-intro {
-  font-size: large;
+  font-style: italic;
 }
 
 @keyframes App-logo-spin {
