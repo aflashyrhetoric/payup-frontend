@@ -1,0 +1,38 @@
+version: "2"
+services:
+  frontend:
+    image: aflashyrhetoric/payup-frontend:dev
+    container_name: payup-frontend-app
+    build: .
+    volumes:
+      # - '.:/usr/src/app'
+      # - '/usr/src/app/node_modules'
+    ports:
+      - '8080:3000'
+    environment:
+      # - NODE_ENV=development
+    # environment:
+    #   - ENV=development
+    #   - DB_NAME=payup_api
+    #   - DB_USER=root
+    #   - DB_PASS=password
+    #   - DB_HOST=db # database container alias - db in this case
+    # command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; go build && gin --appPort 8000'
+  # client:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile-node
+  #   ports:
+  #     - "8080:8080" # webpack-dev-server runs on 8080 by default
+  #   volumes:
+  #     - .:/usr/app
+  #     - /usr/app/node_modules
+  #   links:
+  #     - db
+  #     - api
+  #   depends_on:
+  #     - db
+  #     - api
+  #   environment:
+  #     - NODE_ENV=development
+  #   command: npm run client
