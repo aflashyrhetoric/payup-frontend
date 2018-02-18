@@ -18,4 +18,3 @@ EXPOSE 3000
 
 # to run, use below and then access http://localhost
 # docker run -p 80:3000 payup:frontend
-
