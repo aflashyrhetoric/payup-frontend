@@ -1,15 +1,15 @@
-version: "2"
+# version: "2"
 services:
   frontend:
     image: aflashyrhetoric/payup-frontend:dev
     container_name: payup-frontend-app
     build: .
-    volumes:
+    # volumes:
       # - '.:/usr/src/app'
       # - '/usr/src/app/node_modules'
     ports:
       - '8080:3000'
-    environment:
+    # environment:
       # - NODE_ENV=development
     # environment:
     #   - ENV=development
