@@ -5,44 +5,34 @@ export default class Payup extends Component {
   constructor(props) {
     super(props);
 
-    this.initialFetch();
     this.state = {
-      expenseData: [],
-      responseStatus: 200
+      expenses: [],
     };
+  }
+
+  componentDidMount() {
+    this.initialFetch();
   }
 
   render() {
     return (
       <View>
         <FlatList
-          data={this.state.expenseData}
-          renderItem={({ item }) => <Text>{item.title}</Text>}
+          data={this.state.expenses}
+          renderItem={({ item }) => <Text>{item.description}</Text>}
         />
-        <Text>{this.state.responseStatus}</Text>
       </View>
     );
   }
 
-  initialFetch() {
+  initialFetch = () => {
     // const baseURL = 'http://192.168.1.236';
-    // const endpoint = 'api/v1/expenses';
-    const baseURL = "https://jsonplaceholder.typicode.com";
-    const endpoint = "posts";
+    const baseURL = "http://192.168.1.231:8114";
+    const endpoint = 'api/v1/expenses';
 
     fetch(`${baseURL}/${endpoint}`)
-      .then(function(response) {
-        if (response.status !== 200) {
-          this.setState({ responseStatus: response.status });
-          console.log("Looks like there was a problem: " + response.status);
-        }
-        response
-          .json()
-          .then(responseData => {
-            this.setState({ expenseData: responseData });
-          })
-          .catch(err => console.error(err));
-      })
+      .then(res => res.json())
+      .then(responseData => this.setState({ expenses: responseData.data}))
       .catch(function(err) {
         console.error(err);
       });
