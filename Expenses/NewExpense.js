@@ -53,6 +53,15 @@ export default class ExpenseList extends Component {
           </Text>
           </Link>
         </View>
+
+        <View>
+          <Text>
+            Who Paid?
+          </Text>
+          <Text>
+            Who owes?
+          </Text>
+        </View>
       </View>
     );
   }
