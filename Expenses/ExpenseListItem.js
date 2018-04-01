@@ -31,13 +31,16 @@ export default class ExpenseListItem extends Component {
   render() {
     return (
       <View style={this.styles.ExpenseListContainer}>
-        <Text style={this.styles.ExpenseListItem}>
-          {this.props.expense.description}
-        </Text>
+        <View>
+          <Text style={this.styles.ExpenseListItem}>
+            {this.props.expense.description}
+            {console.log(this.props.expense)}
+          </Text>
 
-        <Text style={this.styles.ExpenseListItem}>
-          $ {this.formatPrice(this.props.expense.amount)}
-        </Text>
+          <Text style={this.styles.ExpenseListItem}>
+            $ {this.formatPrice(this.props.expense.amount)}
+          </Text>
+        </View>
       </View>
     );
   }
