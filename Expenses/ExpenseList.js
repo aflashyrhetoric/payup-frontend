@@ -49,7 +49,7 @@ export default class ExpenseList extends Component {
   render() {
     return (
       <View style={S_Component}>
-        <PageHeader text="My Expenses" />
+        <PageHeader text="My Expenses"/>
         <View>
           <Link to="/">
             <Text style={S_Link}>Dashboard</Text>

@@ -23,7 +23,7 @@ export default class PageHeader extends Component {
   render() {
     return (
       <View style={this.styles.PageHeaderContainer}>
-        <Text style={this.styles.PageHeaderText}>Dashboard</Text>
+        <Text style={this.styles.PageHeaderText}>{this.props.text}</Text>
       </View>
     );
   }

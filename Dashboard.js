@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import { AppRegistry, FlatList, StyleSheet, Text, View } from "react-native";
 import { NativeRouter, Route, Link } from 'react-router-native'; 
 import { C_PRIMARY, C_BLACK, C_WHITE } from './styles/colors';
-import { StyleLink as S_Link, Component as S_Component } from './styles/components';
+import {
+  StyleLink as S_Link,
+  Component as S_Component
+} from './styles/components';
 import PageHeader from './PageHeader';
 
 export default class Payup extends Component {
