@@ -10,15 +10,35 @@ export default class ExpenseListItem extends Component {
     };
 
     this.styles = StyleSheet.create({
+      ExpenseListContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      },
       ExpenseListItem: {
         fontSize: 22,
       },
     });
   }
 
+  formatPrice = (price) => {
+    let newPrice = price;
+    newPrice = newPrice.toString().split('');
+    newPrice.splice(newPrice.length - 2, 0, '.');
+    newPrice = newPrice.join('');
+    return newPrice;
+  }
+
   render() {
     return (
-        <Text style={this.styles.ExpenseListItem}>{this.props.text}</Text>
+      <View style={this.styles.ExpenseListContainer}>
+        <Text style={this.styles.ExpenseListItem}>
+          {this.props.expense.description}
+        </Text>
+
+        <Text style={this.styles.ExpenseListItem}>
+          $ {this.formatPrice(this.props.expense.amount)}
+        </Text>
+      </View>
     );
   }
 }
